@@ -1,0 +1,15 @@
+<%-include('header.ejs')%>
+
+<form action="/recent_plays" method="post">
+    <ul>
+        <h3>Add your plays</h3>
+
+        <li>Your Name : <input type="text" name="myname" required></li>
+        <li>Opponent Name : <input type="text" name="oppname" required></li>
+        <li>Match Score : <input type="text" name="score" required></li>
+        <li>Batting point : <input type="number" name="point" required></li>
+        <button>ADD</button>
+
+    </ul>
+</form>     
+<%-include('footer.ejs')%>
