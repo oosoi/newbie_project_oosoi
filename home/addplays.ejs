@@ -1,13 +1,13 @@
 <%-include('header.ejs')%>
 
-<form action="/recent_plays" method="post">
+<form action="/recent_plays" method="post"> <!--버튼 누르면 /recent_plays 로 넘어감-->
     <ul>
         <h3>Add your plays</h3>
-
-        <li>Your Name : <input type="text" name="myname" required></li>
-        <li>Opponent Name : <input type="text" name="oppname" required></li>
-        <li>Match Score : <input type="text" name="score" required></li>
-        <li>Batting point : <input type="number" name="point" required></li>
+        <li>Date : <input type="text" name="date" placeholder="MM/DD" required></li>
+        <li>Your Name : <input type="text" name="myname" placeholder="ex) Ben Shelton " required></li>
+        <li>Opponent Name : <input type="text" name="oppname" placeholder="ex) Roger Federer " required></li>
+        <li>Match Score : <input type="text" name="score" placeholder="ex) 6:2" required></li>
+        <li>Batting point : <input type="number" name="point" placeholder="ex) 0 " required></li>
         <button>ADD</button>
 
     </ul>
