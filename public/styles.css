@@ -1,0 +1,173 @@
+/* styles.css */
+
+/* 페이지 헤더 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* 네비게이션 스타일 */
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 브라우저의 기본 마진과 패딩을 제거 */
+body, html {
+    font-family: 'heiti sc';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* body 요소에 배경 이미지를 설정 */
+body {
+    background-image: url('/b.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    overflow: auto;
+}
+
+/* 기본 텍스트 스타일 설정 (선택 사항) */
+h1, .rule-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.rule-section {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.rule-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rule-list li {
+    margin: 10px 0;
+}
+
+/* Footer 스타일 */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+footer hr {
+    border: 0;
+    border-top: 1px solid #fff;
+    margin: 5px 0;
+}
+
+
+/*addplays*/
+.form-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.form-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.form-item {
+    margin: 10px 0;
+}
+
+.form-item input {
+    padding: 10px;
+    border: 1px solid #ccc; /* 연한 회색 테두리 */
+    border-radius: 5px;
+    width: 100%; /* 입력칸을 길게 확장 */
+    background-color: #f9f9f9; /* 밝은 배경색 */
+    color: #333; /* 글자 색 */
+}
+
+.form-item input:focus {
+    border-color: #a0a0a0; /* 중간 회색 테두리 */
+    box-shadow: 0 0 5px rgba(160, 160, 160, 0.5); /* 중간 회색 그림자 효과 */
+    outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+.submit-button {
+    background-color: #696969; /* 중간 회색 배경 */
+    color: #fff; /* 버튼 텍스트 흰색 */
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+}
+
+.submit-button:hover {
+    background-color: #333; /* 호버 시 더 짙은 회색 배경 */
+}
+
+
+
+
+/* recent plays */
+
+
+/* 테이블 스타일 */
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    overflow: hidden; /* 테이블의 바탕 배경이 표에서 offset 되지 않도록 설정 */
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* 테이블 배경 추가 */
+}
+
+.table-container th, .table-container td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-container th {
+    background-color: #333;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-container tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 마우스를 대면 더 진한 색으로 변환 */
+}

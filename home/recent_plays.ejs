@@ -1,5 +1,26 @@
 <%-include('header.ejs')%>
 
-    최근 경기 기록들입니다
-     
+   <h1>Recent Plays</h1>
+   <div class="table-container">
+    <table>
+            <tr>
+                <th>Date</th>
+                <th>Winner</th>
+                <th>Loser</th>
+                <th>Game Score</th>
+                <th>Betting Point</th>
+            </tr>
+            
+            <% lists.forEach(function(item){ %>
+                <tr>
+                    <td> <%=item.datedb%> </td>
+                    <td> <%=item.winnerdb%> </td>
+                    <td> <%=item.loserdb%> </td>
+                    <td> <%=item.scoredb%> </td>
+                    <td> <%=item.pointdb%> </td>
+
+                </tr>
+            <%})%>
+    </table>
+
 <%-include('footer.ejs')%>
