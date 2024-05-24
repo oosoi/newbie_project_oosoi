@@ -1,0 +1,54 @@
+
+<%-include('header.ejs')%>
+<body>
+    <div class="container">
+      <div class="table-container">
+        <h2>Profile</h2>
+        <table>
+          <tr>
+            <th>Name</th>
+            <td><%= user.name %></td>
+          </tr>
+          <tr>
+            <th>Current Point</th>
+            <td><%= user.eachpoint %></td>
+          </tr>
+          <tr>
+            <th>Game Won</th>
+            <td><%= user.winnum %></td>
+          </tr>
+          <tr>
+            <th>Game Lost</th>
+            <td><%= user.losenum %></td>
+          </tr>
+          <tr>
+            <th>Winning Rate</th>
+            <td><%= user.winrate %></td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="table-container">
+        <h2>My Recent Matches</h2>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Winner</th>
+            <th>Loser</th>
+            <th>Score</th>
+            <th>Betting Point</th>
+          </tr>
+          <% matches.forEach(function(match) { %>
+            <tr>
+              <td><%= match.datedb %></td>
+              <td><%= match.winnerdb %></td>
+              <td><%= match.loserdb %></td>
+              <td><%= match.scoredb %></td>
+              <td><%= match.pointdb %></td>
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+  </body>
+<%-include('footer.ejs')%>

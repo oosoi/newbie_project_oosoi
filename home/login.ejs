@@ -1,12 +1,24 @@
-<%-include('header.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
 
-<form action="/loginProc" method="post"> 
+<h1>Rank your Rank</h1>
+
+<div class="login-register-container">
+
+  <form action="/auth/login_process" method="post"> 
+    <h3>Log In</h3>
     <ul>
-        <h3>Log In</h3>
-        <li>Enter Your ID : <input type="text" name="user_id" required></li>
-        <li>Enter Your Password : <input type="password" name="user_pw" required></li>
-        <button>Log In</button>
-
+      <li>Enter Your ID : <input type="text" name="enteredid" required></li>
+      <li>Enter Your Password : <input type="password" name="enteredpw" required></li>
+      <button type="submit">Log In</button>
+      <p>You don't have an account ? <a href="/auth/register">Register here !</a></p> 
     </ul>
-</form>     
+  </form>
+</div>
 <%-include('footer.ejs')%>

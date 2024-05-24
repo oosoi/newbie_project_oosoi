@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<h1>Rank your Rank</h1>
+
+<div class="login-register-container">
+
+  <form action="/auth/register_process" method="post"> 
+    <h3>Register</h3>
+    <ul>
+      <li>Enter Your ID : <input type="text" name="enteredid" required></li>
+      <li>Enter Your Name : <input type="text" name="name" required></li>
+      <li>Enter Your Password : <input type="password" name="pwd" required></li>
+      <li>Confirm Your Password : <input type="password" name="pwd2" required></li>
+      <button type="submit">Register</button>
+      <p>You already have an account ? <a href="/auth/login">Log In here !</a></p> 
+    </ul>
+  </form>
+</div>
+<%-include('footer.ejs')%>

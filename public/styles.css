@@ -1,10 +1,12 @@
 /* styles.css */
 
+/* styles.css */
+
 /* 페이지 헤더 스타일 */
 header {
-    background-color: #333;
+    background-color: #222; /* 헤더의 배경색을 어둡게 조정 */
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0; /* 상하 여백을 더 넓게 조정 */
 }
 
 /* 네비게이션 스타일 */
@@ -15,12 +17,15 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 20px; /* 네비게이션 아이템 간의 간격을 넓게 조정 */
+    font-size: 18px; /* 네비게이션 아이템의 폰트 크기를 조정 */
 }
 
 nav a:hover {
-    text-decoration: underline;
+    
+    color: #FFD700; /* 호버 시 글자 색을 금색으로 변경 */
 }
+
 
 /* 브라우저의 기본 마진과 패딩을 제거 */
 body, html {
@@ -42,10 +47,40 @@ body {
     overflow: auto;
 }
 
+
+/* 기존 스타일 유지 */
+
+/* .example 클래스에 대한 스타일 추가 */
+.example {
+    font-style: italic; /* 기울임꼴 */
+    color: #FFD700; /* 금색 */
+    background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 흰색 배경 */
+    padding: 10px; /* 내부 여백 */
+    border-left: 5px solid #FFD700; /* 왼쪽에 금색 테두리 */
+    margin-top: 20px; /* 상단 여백 */
+}
+
 /* 기본 텍스트 스타일 설정 (선택 사항) */
-h1, .rule-title {
+h1{
     text-align: center;
+    color: #FFD700; /* 글자 색을 금색으로 변경 */
     margin: 20px 0;
+    font-size: 3em; /* 폰트 크기를 조정합니다. */
+    font-weight: bold; /* 글자 두껍게 설정합니다. */
+
+}
+.rule-title {
+    text-align: center;
+    color: #FFD700; /* 글자 색을 금색으로 변경 */
+    margin: 20px 0;
+    font-size: 1.5em; /* 폰트 크기를 조정합니다. */
+    font-weight: bold; /* 글자 두껍게 설정합니다. */
+
+}
+
+h2 {
+    text-align: center; /* h2 요소의 텍스트를 가운데 정렬 */
+    margin: 20px auto; /* 좌우 여백을 auto로 설정하여 가운데 정렬 */
 }
 
 .rule-section {
@@ -61,7 +96,7 @@ h1, .rule-title {
 }
 
 .rule-list li {
-    margin: 10px 0;
+    margin: 30px 0; /* 각 li 요소의 상하 간격을 조정 */
 }
 
 /* Footer 스타일 */
@@ -73,7 +108,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0;
-    background-color: #333;
+    background-color: #222; /* 푸터의 배경색을 어둡게 조정 */
     color: #fff;
 }
 
@@ -82,6 +117,7 @@ footer hr {
     border-top: 1px solid #fff;
     margin: 5px 0;
 }
+
 
 
 /*addplays*/
@@ -107,7 +143,7 @@ footer hr {
     border: 1px solid #ccc; /* 연한 회색 테두리 */
     border-radius: 5px;
     width: 100%; /* 입력칸을 길게 확장 */
-    background-color: #f9f9f9; /* 밝은 배경색 */
+    background-color: rgba(249, 249, 249, 0.8); /* 반투명한 흰색 배경 */
     color: #333; /* 글자 색 */
 }
 
@@ -116,6 +152,7 @@ footer hr {
     box-shadow: 0 0 5px rgba(160, 160, 160, 0.5); /* 중간 회색 그림자 효과 */
     outline: none; /* 기본 포커스 아웃라인 제거 */
 }
+
 
 .submit-button {
     background-color: #696969; /* 중간 회색 배경 */
@@ -138,6 +175,10 @@ footer hr {
 /* recent plays */
 
 
+/* styles.css */
+
+/* 기존 스타일 유지 */
+
 /* 테이블 스타일 */
 .table-container {
     margin: 20px;
@@ -145,13 +186,14 @@ footer hr {
     border-radius: 10px;
     color: white;
     overflow: hidden; /* 테이블의 바탕 배경이 표에서 offset 되지 않도록 설정 */
+    /* background: rgba(0, 0, 0, 0.5); 배경색 제거 */
 }
 
 .table-container table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* 행 간 간격을 두어 행의 끝을 둥글게 표시 */
     color: white;
-    background: rgba(0, 0, 0, 0.5); /* 테이블 배경 추가 */
 }
 
 .table-container th, .table-container td {
@@ -164,10 +206,131 @@ footer hr {
     background-color: #333;
 }
 
-.table-container tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1);
+.table-container tr {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden; /* 둥근 모서리가 잘리도록 설정 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 부드러운 전환 효과 추가 */
 }
 
-.table-container tr:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* 마우스를 대면 더 진한 색으로 변환 */
+
+
+
+
+.table-container tr:not(:first-child):nth-child(odd):hover {
+    background-color: rgba(50, 50, 50, 0.7); /* 홀수번째 행에 마우스를 대면 어두운 회색으로 변환 */
+    transform: translateY(-3px); /* 마우스를 대면 살짝 올라오는 효과 */
 }
+
+.table-container tr:not(:first-child):nth-child(even):hover {
+    background-color: rgba(200, 200, 200, 0.5); /* 짝수번째 행에 마우스를 대면 밝은 회색으로 변환 */
+    transform: translateY(-3px); /* 마우스를 대면 살짝 올라오는 효과 */
+}
+
+.table-container tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table-container tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*로그인 회원가입*/
+/* login-register.css */
+
+/* 로그인 및 회원가입 컨테이너 스타일 */
+.login-register-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.login-register-container form {
+    margin-top: 20px;
+}
+
+.login-register-container h3 {
+    color: #FFD700;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-register-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.login-register-container li {
+    margin: 10px 0;
+}
+
+.login-register-container input[type="text"],
+.login-register-container input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: rgba(249, 249, 249, 0.8);
+    color: #333;
+}
+
+.login-register-container input[type="text"]:focus,
+.login-register-container input[type="password"]:focus {
+    border-color: #a0a0a0;
+    box-shadow: 0 0 5px rgba(160, 160, 160, 0.5);
+    outline: none;
+}
+
+.login-register-container button[type="submit"] {
+    background-color: #696969;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-register-container button[type="submit"]:hover {
+    background-color: #333;
+}
+
+.login-register-container p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-register-container a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.login-register-container a:hover {
+    text-decoration: underline;
+}
+/* login-register.css */
+
+/* 로그인 및 회원가입 컨테이너 스타일 */
+.login-register-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 0 auto; /* 수평 중앙 정렬을 위해 margin 속성 추가 */
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 50%; /* 화면 상단에서 세로 중앙으로 이동 */
+    left: 50%; /* 화면 좌측에서 가로 중앙으로 이동 */
+    transform: translate(-50%, -50%); /* 수평 및 수직 중앙 정렬 */
+    max-width: 400px; /* 컨테이너의 최대 너비 지정 */
+    width: 100%; /* 컨테이너의 너비를 화면 폭에 맞게 설정 */
+    box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+}
+
+
+
