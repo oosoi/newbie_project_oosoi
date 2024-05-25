@@ -30,10 +30,10 @@ connection.connect((err) => {
 });
 
 app.set('view engine', 'ejs');
-app.set('views', './home');
+app.set('views', './client/ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use(express.static('./client/public'));
 
 // 세션 디렉토리 생성 확인
 const sessionPath = './sessions';

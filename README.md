@@ -2,19 +2,19 @@
 
 Helps Ranking in tennis clubs
 
-You can see
+You can 
 
-    - real-time rankings
+    - see real-time rankings
 
-    - all plays in the group
+    - see all plays in the group
 
     - add plays that you played
 
-    - your current point 
+    - see your current point 
 
-    - your winning rate
+    - see your winning rate
     
-    - results of games you played
+    - see results of games you have played
     
   
 
