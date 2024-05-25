@@ -17,7 +17,7 @@ function statusUI(request) {
 // 인증 및 메시지 설정 함수
 function checkAuth(request, response, redirectUrl, showWelcome = false) {
   if (!isOwner(request)) {
-    response.send("<script>alert('Please login '); location.href='/auth/login';</script>");
+    response.redirect(redirectUrl);
     return false;
   }
   if (showWelcome) {

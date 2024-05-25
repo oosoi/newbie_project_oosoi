@@ -217,12 +217,8 @@ footer hr {
 
 
 
-.table-container tr:not(:first-child):nth-child(odd):hover {
-    background-color: rgba(50, 50, 50, 0.7); /* 홀수번째 행에 마우스를 대면 어두운 회색으로 변환 */
-    transform: translateY(-3px); /* 마우스를 대면 살짝 올라오는 효과 */
-}
 
-.table-container tr:not(:first-child):nth-child(even):hover {
+.table-container tr:not(:first-child):hover {
     background-color: rgba(200, 200, 200, 0.5); /* 짝수번째 행에 마우스를 대면 밝은 회색으로 변환 */
     transform: translateY(-3px); /* 마우스를 대면 살짝 올라오는 효과 */
 }

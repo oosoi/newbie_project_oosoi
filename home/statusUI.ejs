@@ -1,11 +1,3 @@
-<!--<% if (isOwner) { %>
-    <%= request.session.nickname %>님 환영합니다 | <a href="/auth/logout">로그아웃</a>
-<% } else { %>
-    로그인 후 사용 가능합니다.
-<% } %>
--->
-
-
     <% if (isOwner) { %>
         <script> alert('<%= request.session.nickname %>님 환영합니다 | <a href="/auth/logout">로그아웃</a>');</script>
     <% } else { %>

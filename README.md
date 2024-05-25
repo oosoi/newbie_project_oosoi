@@ -2,15 +2,19 @@
 
 Helps Ranking in tennis clubs
 
-- Can add new Tournaments and 1:1 match
-
-- See
+You can see
 
     - real-time rankings
 
-    - win rate
+    - all plays in the group
+
+    - add plays that you played
+
+    - your current point 
+
+    - your winning rate
     
-    - results of games
+    - results of games you played
     
-    - Boards for notice and nominate opponent
+  
 

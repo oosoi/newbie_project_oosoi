@@ -1,15 +1,24 @@
+// auth.js
+
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2');
 const authCheck = require('./authCheck');
 
 const connection = mysql.createConnection({
-  host: 'db',
-  user: 'root',
-  password: 'tnfqkrtm',
-  database: 'RankYourRank'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD, 
+  database: 'Rank Your Rank'
 });
-console.log('DB 연결 성공(auth.js) !');
+
+connection.connect((err) => {
+  if (err) {
+    console.error('DB 연결 실패(auth.js): ', err);
+    process.exit(1); // 연결 실패 시 프로세스 종료
+  }
+  console.log('DB 연결 성공(auth.js) !');
+});
 
 // 로그인 화면
 router.get('/login', function (req, res) {
@@ -86,3 +95,4 @@ router.post('/register_process', function(req, res) {
 });
 
 module.exports = router;
+

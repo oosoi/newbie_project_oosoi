@@ -1,3 +1,5 @@
+// app.js
+
 const express = require('express');
 const ejs = require('ejs');
 const app = express();
@@ -13,12 +15,19 @@ const authCheck = require('./authCheck');
 require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: 'db',
-  user: 'root',
-  password: 'tnfqkrtm',
-  database: 'RankYourRank'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD, 
+  database: 'Rank Your Rank'
 });
-console.log('DB 연결 성공 !');
+
+connection.connect((err) => {
+  if (err) {
+    console.error('DB 연결 실패: ', err);
+    process.exit(1); // 연결 실패 시 프로세스 종료
+  }
+  console.log('DB 연결 성공 !');
+});
 
 app.set('view engine', 'ejs');
 app.set('views', './home');
@@ -28,16 +37,34 @@ app.use(express.static('public'));
 
 // 세션 디렉토리 생성 확인
 const sessionPath = './sessions';
-if (!fs.existsSync(sessionPath)){
-    fs.mkdirSync(sessionPath);
+if (!fs.existsSync(sessionPath)) {
+    try {
+        fs.mkdirSync(sessionPath, { recursive: true });
+        console.log(`세션 디렉토리 생성: ${sessionPath}`);
+    } catch (err) {
+        console.error(`세션 디렉토리 생성 실패: ${err.message}`);
+        process.exit(1); // 디렉토리 생성 실패 시 프로세스 종료
+    }
 }
+
+// 세션 스토어 설정 및 에러 핸들링
+const fileStoreOptions = {
+    path: sessionPath,
+    retries: 0 // 재시도 옵션 추가
+};
+
+const store = new FileStore(fileStoreOptions);
+
+store.on('error', function (error) {
+    console.error('FileStore Error:', error);
+});
 
 app.use(session({ 
   secret: 'keyboard cat', 
   cookie: { maxAge: 1800000 }, // 30분(30 * 60 * 1000 밀리초)
   resave: false, 
   saveUninitialized: true, 
-  store: new FileStore({ path: sessionPath }) 
+  store: store
 }));
 
 // '/auth' 경로에 대한 라우터 설정
@@ -121,7 +148,7 @@ app.get('/recent_plays', (req, res) => {
     return;
   }
 
-  const sql = `SELECT * FROM recentPlays`;
+  const sql = `SELECT * FROM recentPlays ORDER BY datedb DESC`; // datedb 기준으로 내림차순 정렬
   connection.query(sql, function (err, results, fields) {
     if (err) throw err;
     res.render('recent_plays', { lists: results });
@@ -161,7 +188,7 @@ app.get('/profile', (req, res) => {
       }
 
       // 최근 경기 기록 가져오기
-      connection.query('SELECT * FROM recentPlays WHERE winnerdb = ? OR loserdb = ?', [user.namedb, user.namedb], function(error, matches, fields) {
+      connection.query('SELECT * FROM recentPlays WHERE winnerdb = ? OR loserdb = ?', [nickname, nickname], function(error, matches, fields) {
         if (error) throw error;
         res.render('profile', { 
           user: {
